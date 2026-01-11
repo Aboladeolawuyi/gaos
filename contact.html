@@ -82,45 +82,56 @@
   <div class="container grid-2">
 
     <!-- CONTACT FORM -->
-    <div class="contact-form card">
-      <h2>Send Us a Message</h2>
-      <p>
-        Fill the form below and one of our professionals will
-        respond promptly.
-      </p>
+<div class="contact-form card">
+  <h2>Send Us a Message</h2>
+  <p>
+    Fill the form below and one of our professionals will
+    respond promptly.
+  </p>
 
-      <form>
-        <div class="form-group">
-          <input type="text" placeholder="Your Full Name" required />
-        </div>
-
-        <div class="form-group">
-          <input type="email" placeholder="Your Email Address" required />
-        </div>
-
-        <div class="form-group">
-          <input type="text" placeholder="Phone Number" />
-        </div>
-
-        <div class="form-group">
-          <textarea rows="5" placeholder="Your Message"></textarea>
-        </div>
-
-        <button type="submit" class="btn-primary">
-          Submit Message
-        </button>
-      </form>
+  <form
+    action="mailto:gaoskinematics@gmail.com"
+    method="POST"
+    enctype="text/plain"
+  >
+    <div class="form-group">
+      <input type="text" name="Full Name" placeholder="Your Full Name" required />
     </div>
+
+    <div class="form-group">
+      <input type="email" name="Email" placeholder="Your Email Address" required />
+    </div>
+
+    <div class="form-group">
+      <input type="text" name="Phone" placeholder="Phone Number" />
+    </div>
+
+    <div class="form-group">
+      <textarea
+        name="Message"
+        rows="5"
+        placeholder="Your Message"
+        required
+      ></textarea>
+    </div>
+
+    <button type="submit" class="btn-primary">
+      Submit Message
+    </button>
+  </form>
+</div>
+
 
     <!-- MAP -->
-    <div class="map-wrapper card">
-      <h2>Our Location</h2>
-      <iframe
-        src="https://www.google.com/maps?q=Awoyaya,Lagos&output=embed"
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
-    </div>
+   <div class="map-wrapper card">
+  <h2>Our Location</h2>
+  <iframe
+    src="https://www.google.com/maps?q=6.468025,3.706945&z=15&output=embed"
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+</div>
+
 
   </div>
 </section>

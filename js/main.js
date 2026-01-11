@@ -39,3 +39,49 @@ serviceCards.forEach(card => {
     card.style.transform = "rotateX(0) rotateY(0) translateY(0)";
   });
 });
+const statBoxes = document.querySelectorAll(".stat-box");
+
+function animateCounter(box) {
+  const counter = box.querySelector(".counter");
+  if (!counter) return;
+
+  const target = +box.getAttribute("data-target");
+  let start = 0;
+  const duration = 2000; // total animation time (ms)
+  const startTime = performance.now();
+
+  function update(currentTime) {
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+
+    // ease-out animation
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const value = Math.floor(eased * target);
+
+    counter.textContent = value + (target >= 10 ? "+" : "");
+
+    if (progress < 1) {
+      requestAnimationFrame(update);
+    } else {
+      counter.textContent = target + (target >= 10 ? "+" : "");
+    }
+  }
+
+  requestAnimationFrame(update);
+}
+
+// Scroll animation
+const observer = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        animateCounter(entry.target);
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.3 }
+);
+
+statBoxes.forEach(box => observer.observe(box));
