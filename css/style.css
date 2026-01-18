@@ -424,7 +424,7 @@ nav a:hover {
    CTA SECTION
 ================================ */
 .cta {
-  padding: 80px 0;
+  padding: 50px 0;
   text-align: center;
 }
 
@@ -1051,10 +1051,11 @@ p {
 /* Project Card */
 .project-card {
   background: var(--white);
-  border-radius: var(--radius);
+  border-radius: 15px;
   overflow: hidden;
   box-shadow: var(--shadow);
   transition: var(--transition);
+
 }
 
 .project-card img {
@@ -1213,4 +1214,8 @@ p {
   .service-info p {
     font-size: 0.95rem;
   }
+}
+.subsection-head{
+  font-size: 25px;
+  text-align: center;
 }
