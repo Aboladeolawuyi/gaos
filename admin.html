@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Login | Gaos Kinematic Concept Limited</title>
+  <meta name="description" content="Secure admin login for Gaos Kinematic live site photo uploads." />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<header class="site-header">
+  <div class="container navbar">
+    <a href="index.html" class="brand">
+      <img src="assets/logo.jpg" alt="GAOS Logo" class="logo">
+      <span class="brand-name">Gaos Kinematic Concept Limited</span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu"><span></span><span></span><span></span></button>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="projects.html">Projects</a><a href="contact.html">Contact</a><a href="admin.html" class="admin-link">Admin</a>
+    </nav>
+  </div>
+</header>
+
+<main class="admin-shell">
+  <div class="container admin-panel">
+    <section id="loginBox" class="admin-card">
+      <div class="section-kicker">Secure Access</div>
+      <h1 class="section-title">Admin Login</h1>
+      <p class="section-intro">Login to upload live field pictures with survey type, location, and site notes.</p>
+      <form id="loginForm" class="admin-grid">
+        <div class="form-group admin-full"><input type="email" name="email" placeholder="Admin Email" required /></div>
+        <div class="form-group admin-full"><input type="password" name="password" placeholder="Password" required /></div>
+        <div class="admin-actions admin-full"><button class="btn-primary" type="submit">Login</button></div>
+        <p id="loginStatus" class="form-status admin-full"></p>
+      </form>
+    </section>
+
+    <section id="uploadBox" class="admin-card" style="display:none;">
+      <div class="admin-actions" style="justify-content:space-between; margin-bottom:1rem;">
+        <div><div class="section-kicker" style="text-align:left;">Live Uploads</div><h1>Upload Site Photo</h1></div>
+        <button id="logoutBtn" class="btn-danger">Logout</button>
+      </div>
+      <form id="photoForm" class="admin-grid">
+        <div class="form-group"><input type="text" name="title" placeholder="Photo Title" required /></div>
+        <div class="form-group"><input type="text" name="survey_type" placeholder="Survey Type e.g. Cadastral Survey" required /></div>
+        <div class="form-group admin-full"><input type="text" name="location" placeholder="Location e.g. Awoyaya, Lagos" required /></div>
+        <div class="form-group admin-full"><textarea name="caption" rows="4" placeholder="Short note about the work on site" required></textarea></div>
+        <div class="form-group admin-full"><input id="photoInput" type="file" name="photo" accept="image/*" required /></div>
+        <img id="photoPreview" class="admin-preview" alt="Preview" />
+        <div class="form-group"><label><input type="checkbox" name="is_public" checked /> Show publicly on website</label></div>
+        <div class="admin-actions admin-full"><button class="btn-primary" type="submit">Upload Photo</button></div>
+        <p id="photoStatus" class="form-status admin-full"></p>
+      </form>
+      <hr style="margin:2rem 0; border:0; border-top:1px solid #e2e8f0;">
+      <h2>Recent Uploaded Photos</h2>
+      <div id="adminPhotosList" class="admin-list"></div>
+    </section>
+  </div>
+</main>
+
+<footer class="footer"><p>© 2026 <span><a href="index.html" style="text-decoration:none;color:white">Gaos Kinematic Concept Limited.</a></span> All Rights Reserved.</p></footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-config.js"></script>
+<script src="js/main.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Contact GAOS Kinematics for professional surveying and geospatial services in Nigeria. Get expert consultation and reliable survey solutions.">
-  <title>Contact GAOS Kinematic | Professional Surveyors in Nigeria</title>
+  <meta name="description" content="Contact Gaos Kinematic for professional surveying and geospatial services in Nigeria. Get expert consultation and reliable survey solutions.">
+  <title>Contact Gaos Kinematic | Professional Surveyors in Nigeria</title>
   <link rel="icon" type="image/png" href="assets/favicon.png" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
@@ -16,7 +16,7 @@
 
  <a href="index.html" class="brand">
   <img src="assets/logo.jpg" alt="GAOS Logo" class="logo">
-  <span class="brand-name">GAOS Kinematic Concept Limited</span>
+  <span class="brand-name">Gaos Kinematic Concept Limited</span>
 </a>
     
 
@@ -33,6 +33,7 @@
       <a href="services.html">Services</a>
       <a href="projects.html">Projects</a>
       <a href="contact.html">Contact</a>
+      <a href="admin.html" class="admin-link">Admin</a>
     </nav>
 
   </div>
@@ -90,11 +91,7 @@
     respond promptly.
   </p>
 
-  <form
-    action="mailto:gaoskinematics@gmail.com"
-    method="POST"
-    enctype="text/plain"
-  >
+  <form id="contactForm">
     <div class="form-group">
       <input type="text" name="Full Name" placeholder="Your Full Name" required />
     </div>
@@ -116,9 +113,8 @@
       ></textarea>
     </div>
 
-    <button type="submit" class="btn-primary">
-      Submit Message
-    </button>
+    <button type="submit" class="btn-primary">Submit Message</button>
+    <p id="contactStatus" class="form-status"></p>
   </form>
 </div>
 
@@ -142,7 +138,7 @@
   <div class="container narrow">
     <h2>Ready to Start Your Project?</h2>
     <p>
-      Engage GAOS Kinematic Concept Limited for professional,
+      Engage Gaos Kinematic Concept Limited for professional,
       accurate and dependable solutions.
     </p>
     <a href="services.html" class="btn-primary">View Our Services</a>
@@ -151,9 +147,11 @@
 
 <!-- ================= FOOTER ================= -->
 <footer class="footer">
-  <p>© 2026 <span><a href="index.html" style="text-decoration: none; color:white">GAOS Kinematic Concept Limited.</a></span> All Rights Reserved.</p>
+  <p>© 2026 <span><a href="index.html" style="text-decoration: none; color:white">Gaos Kinematic Concept Limited.</a></span> All Rights Reserved.</p>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-config.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

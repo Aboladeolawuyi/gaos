@@ -5,15 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- SEO TITLE -->
-  <title>Surveying, GIS & Civil Engineering Company in Lagos | GAOS Kinematic</title>
+  <title>Surveying, GIS & Civil Engineering Company in Lagos | Gaos Kinematic</title>
   <!-- META DESCRIPTION -->
-  <meta name="description" content="GAOS Kinematics Concept Limited is a leading Nigerian surveying, GIS and civil engineering consultancy based in Lagos, delivering precision-driven geospatial and infrastructure solutions." />
+  <meta name="description" content="Gaos Kinematic Concept Limited is a leading Nigerian surveying, GIS and civil engineering consultancy based in Lagos, delivering precision-driven geospatial and infrastructure solutions." />
 
   <!-- CANONICAL -->
   <link rel="canonical" href="https://gaoskinematics.com/" />
 
   <!-- OPEN GRAPH -->
-  <meta property="og:title" content="GAOS Kinematics Concept Limited – Surveying & GIS Experts" />
+  <meta property="og:title" content="Gaos Kinematic Concept Limited – Surveying & GIS Experts" />
   <meta property="og:description" content="Precision-driven surveying, GIS and civil engineering services across Nigeria." />
   <meta property="og:image" content="https://gaoskinematics.com/assets/hero3.webp" />
   <meta property="og:url" content="https://gaoskinematics.com/" />
@@ -30,9 +30,9 @@
   {
     "@context": "https://schema.org",
     "@type": "EngineeringConsulting",
-    "name": "GAOS Kinematics Concept Limited",
-    "url": "https://yourdomain.com",
-    "logo": "https://yourdomain.com/assets/logo.jpg",
+    "name": "Gaos Kinematic Concept Limited",
+    "url": "https://gaoskinematics.com",
+    "logo": "https://gaoskinematics.com/assets/logo.jpg",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Lagos",
@@ -49,7 +49,7 @@
 
  <a href="index.html" class="brand">
   <img src="assets/logo.jpg" alt="GAOS Logo" class="logo">
-  <span class="brand-name">GAOS Kinematic Concept Limited</span>
+  <span class="brand-name">Gaos Kinematic Concept Limited</span>
 </a>
     
 
@@ -66,6 +66,7 @@
       <a href="services.html">Services</a>
       <a href="projects.html">Projects</a>
       <a href="contact.html">Contact</a>
+      <a href="admin.html" class="admin-link">Admin</a>
     </nav>
 
   </div>
@@ -90,14 +91,14 @@
 <!-- ================= WHO WE ARE ================= -->
 <section class="section">
   <div class="container narrow">
-    <h2 class="section-title">HOW ARE YOU</h2>
+    <h2 class="section-title">Who We Are</h2>
     <p class="subsection-head">
-      GAOS Kinematics Concept Limited is a wholly Nigerian, multidisciplinary
+      Gaos Kinematic Concept Limited is a wholly Nigerian, multidisciplinary
       consultancy firm established in 2015.
     </p>
     <p class="subsection-head">
       Founded by seasoned GIS specialists, geodesists and digital mappers,
-      GAOS Kinematics Concept Limited provides high-precision surveying,
+      Gaos Kinematic Concept Limited provides high-precision surveying,
       geospatial intelligence, civil engineering and construction services.
       Our operations are guided by accuracy, innovation, safety and adherence
       to international professional standards.
@@ -193,6 +194,58 @@
   </div>
 </section>
 
+
+<!-- ================= LIVE SITE PHOTO UPDATES ================= -->
+<section class="section live-section" id="live-updates">
+  <div class="container">
+    <div class="section-kicker">Field Updates</div>
+    <h2 class="section-title">Live Pictures From Site</h2>
+    <p class="section-intro">Fresh field photographs showing the type of survey being carried out, the project location, and short site notes.</p>
+    <div id="livePhotosGrid" class="live-photos-grid">
+      <div class="empty-state">Loading live site photos...</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CLIENT REVIEW SECTION ================= -->
+<section class="section bg-light" id="reviews">
+  <div class="container grid-2 review-wrap">
+    <div>
+      <div class="section-kicker">Client Feedback</div>
+      <h2 class="section-title text-left">Send a Review</h2>
+      <p class="review-copy">Tell us how we performed. Your review will be saved securely and also emailed to the company for quick attention.</p>
+      <div id="latestReviews" class="review-list"></div>
+    </div>
+
+    <form id="reviewForm" class="card review-form">
+      <div class="form-group">
+        <input type="text" name="name" placeholder="Your Full Name" required />
+      </div>
+      <div class="form-group">
+        <input type="email" name="email" placeholder="Your Email Address" required />
+      </div>
+      <div class="form-group">
+        <input type="text" name="project_type" placeholder="Project / Service Type e.g. Topographic Survey" required />
+      </div>
+      <div class="form-group">
+        <select name="rating" required>
+          <option value="">Select Rating</option>
+          <option value="5">★★★★★ Excellent</option>
+          <option value="4">★★★★ Very Good</option>
+          <option value="3">★★★ Good</option>
+          <option value="2">★★ Fair</option>
+          <option value="1">★ Poor</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <textarea name="message" rows="5" placeholder="Write your review here" required></textarea>
+      </div>
+      <button type="submit" class="btn-primary">Submit Review</button>
+      <p id="reviewStatus" class="form-status"></p>
+    </form>
+  </div>
+</section>
+
 <!-- ================= CTA ================= -->
 <section class="cta">
   <div class="container narrow">
@@ -207,9 +260,11 @@
 
 <!-- ================= FOOTER ================= -->
 <footer class="footer">
-  <p>© 2026 <span><a href="index.html" style="text-decoration: none; color:white">GAOS Kinematics Concept Limited.</a></span> All Rights Reserved.</p>
+  <p>© 2026 <span><a href="index.html" style="text-decoration: none; color:white">Gaos Kinematic Concept Limited.</a></span> All Rights Reserved.</p>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-config.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>
