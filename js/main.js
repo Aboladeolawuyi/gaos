@@ -90,23 +90,34 @@ async function loadLatestReviews() {
 
   const { data, error } = await db
     .from("reviews")
-    .select("name,project_type,rating,message,created_at,is_public")
+    .select("name,project_type,rating,message,created_at")
     .eq("is_public", true)
     .order("created_at", { ascending: false })
-    .limit(3);
+    .limit(6);
 
-  if (error || !data || data.length === 0) {
-    wrap.innerHTML = `<p class="muted-small">Recent approved reviews will appear here.</p>`;
+  if (error) {
+    wrap.innerHTML = `<p class="muted-small">Approved reviews could not load: ${escapeHtml(error.message)}</p>`;
+    return;
+  }
+
+  if (!data || data.length === 0) {
+    wrap.innerHTML = `<div class="review-empty-box">Approved client reviews will appear here after admin approval.</div>`;
     return;
   }
 
   wrap.innerHTML = data.map(r => `
-    <div class="review-mini-card">
-      <div class="stars">${"★".repeat(Number(r.rating || 5))}</div>
+    <article class="review-mini-card polished-review">
+      <div class="review-card-head">
+        <div class="review-avatar">${getInitials(r.name)}</div>
+        <div>
+          <strong>${escapeHtml(r.name || 'Client')}</strong>
+          <small>${escapeHtml(r.project_type || 'Gaos Kinematic Client')}</small>
+        </div>
+      </div>
+      <div class="stars" aria-label="${Number(r.rating || 5)} star rating">${renderStars(r.rating)}</div>
       <p>“${escapeHtml(r.message)}”</p>
-      <strong>${escapeHtml(r.name)}</strong>
-      <small>${escapeHtml(r.project_type || '')}</small>
-    </div>
+      <time>${formatDate(r.created_at)}</time>
+    </article>
   `).join("");
 }
 
@@ -180,6 +191,20 @@ function escapeHtml(value = "") {
   return String(value).replace(/[&<>'"]/g, char => ({
     "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;"
   }[char]));
+}
+
+function renderStars(rating = 5) {
+  const n = Math.max(1, Math.min(5, Number(rating) || 5));
+  return "★".repeat(n) + "☆".repeat(5 - n);
+}
+
+function getInitials(name = "Client") {
+  return String(name)
+    .trim()
+    .split(/\s+/)
+    .slice(0, 2)
+    .map(part => part[0]?.toUpperCase() || "")
+    .join("") || "C";
 }
 
 function formatDate(value) {
